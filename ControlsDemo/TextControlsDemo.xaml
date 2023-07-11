@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlsDemo.TextControlsDemo"
+             Title="TextControlsDemo">
+    <StackLayout Margin="10">
+
+        <Label Text="Name:"/>
+        <Entry Placeholder="Enter your name"
+               x:Name="txtName"
+               PlaceholderColor="DarkGreen"
+               IsPassword="False"
+               Keyboard="Text"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Completed">
+        </Entry>
+
+        <Label Text="Age:"/>
+        <Entry Placeholder="Enter your Age"
+               x:Name="txtAge"
+               PlaceholderColor="DarkGreen"
+               IsPassword="False"
+               Keyboard="Numeric"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Completed">
+        </Entry>
+
+        <Label Text="E Mail:"/>
+        <Entry Placeholder="Enter your E Mail"
+               x:Name="txtEMail"
+               PlaceholderColor="DarkGreen"
+               IsPassword="False"
+               Keyboard="Email"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Completed">
+        </Entry>
+
+        <Label Text="Telephone:"/>
+        <Entry Placeholder="Enter your Telephone"
+               x:Name="txtPhone"
+               PlaceholderColor="DarkGreen"
+               IsPassword="False"
+               Keyboard="Telephone"
+               TextChanged="Entry_TextChanged"
+               Completed="Entry_Completed">
+        </Entry>
+
+        <Label Text="Test Editor: "/>
+        <Editor AutoSize="TextChanges"/>
+
+    </StackLayout>
+</ContentPage>
