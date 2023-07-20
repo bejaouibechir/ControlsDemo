@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ControlsDemo"
              x:Class="ControlsDemo.CollectionsControlsDemo"
              Title="CollectionsControlsDemo">
     <!--<StackLayout>-->
@@ -43,12 +44,12 @@
         IndicatorColor="LightGray"
         SelectedIndicatorColor="DarkGray"/>-->
 
-
-
-
     <!--</StackLayout>-->
 
-    <!--<ListView HasUnevenRows="True">
+    <!--To test ListView Uncomment this-->
+  
+    <!--<ListView HasUnevenRows="True" >
+        --><!--To feed the listview with fake data--><!--
         <ListView.ItemsSource>
              <x:Array Type="{x:Type x:String}">
                 <x:String>C#</x:String>
@@ -62,33 +63,53 @@
                 <x:String>Groovy</x:String>
             </x:Array>
         </ListView.ItemsSource>
+
+        --><!--Uncomment To use the ListView (The TextCell case)-->
+        <!--<ListView.ItemsSource>
+            <x:Array Type="{x:Type local:Langage}">
+                <local:Langage Name="C#" Detail="Compiled Langage"/>
+                <local:Langage Name="Python" Detail="Interperted Langage"/>
+                <local:Langage Name="C" Detail="Procedural Langage"/>
+                <local:Langage Name="F#" Detail="Functional Langage"/>
+            </x:Array>
+        </ListView.ItemsSource>
+        
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <StackLayout>
-                        <Frame
-                            Margin="20"
-                            BorderColor="DarkGray"
-                            CornerRadius="5"
-                            HasShadow="True"
-                            HeightRequest="100"
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                            <Label Text="{Binding .}" />
-                        </Frame>
-                    </StackLayout>
-                </ViewCell>
+                <TextCell Text="{Binding Name }" 
+                          Detail="{Binding Detail}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>--><!--
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding .}" 
+                          Detail="Programming langage"/>
             </DataTemplate>
         </ListView.ItemTemplate>
+
     </ListView>-->
+    
+    
     <!--Uncomment to test the collection view-->
-    <CollectionView SelectionMode="Multiple"  >
+    <CollectionView x:Name="mycollection" SelectionMode="Multiple"  >
         <CollectionView.Header>
             <Label FontSize="Large" Margin="10" Text="Languages:"/>
         </CollectionView.Header>
+        <!--Use the HeaderTemplate to define dynamically the header-->
+        <!--<CollectionView.HeaderTemplate>
+            <DataTemplate>
+                
+            </DataTemplate>
+        </CollectionView.HeaderTemplate>-->
         <CollectionView.Footer>
             <Label FontSize="Large" Margin="10" Text="Languages"/>
         </CollectionView.Footer>
+        <!--Use the FooterTemplate to define dynamically the footer--><!--
+        <CollectionView.FooterTemplate>
+            
+        </CollectionView.FooterTemplate>-->
+        
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type x:String}">
                 <x:String>C#</x:String>
@@ -102,6 +123,7 @@
                 <x:String>Groovy</x:String>
             </x:Array>
         </CollectionView.ItemsSource>
+        
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
@@ -120,6 +142,8 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
+    
+            
     <!--Uncomment to test the  Picker-->
     <!--<StackLayout>
         <Picker Title="Select a Language" 

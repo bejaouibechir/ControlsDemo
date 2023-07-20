@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace ControlsDemo;
 
 public partial class CollectionsControlsDemo : ContentPage
@@ -5,7 +7,9 @@ public partial class CollectionsControlsDemo : ContentPage
 	public CollectionsControlsDemo()
 	{
 		InitializeComponent();
-	}
+    }
+
+   
 
     private void Picker_SelectedIndexChanged(object sender, EventArgs e)
     {

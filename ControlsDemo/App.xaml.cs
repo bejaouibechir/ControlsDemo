@@ -1,8 +1,9 @@
-﻿#define collectionviews
+﻿//#define itemsviews
 //#define commandviews
 //#define inputcontrols
 //#define prensentationcontrols
 //#define textcontrols
+#define collectionviews 
 
 namespace ControlsDemo;
 
@@ -12,7 +13,7 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
-#if collectionviews
+#if itemsviews
         MainPage = new CollectionsControlsDemo();
 #endif
 #if commandviews
@@ -26,6 +27,10 @@ public partial class App : Application
 #endif
 #if inputcontrols
         MainPage = new InputControlsDemo();
+#endif
+
+#if collectionviews
+        MainPage = new CollectionViewPageDemo();
 #endif
 
 
