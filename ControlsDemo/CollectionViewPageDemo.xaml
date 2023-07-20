@@ -7,7 +7,7 @@
                 IsGrouped="true">
         <CollectionView.GroupHeaderTemplate>
             <DataTemplate>
-                <Label Text="{Binding Name}"
+                <Label Text="{Binding Name}" Margin="10"
                    BackgroundColor="LightGray"
                    FontSize="18"
                    FontAttributes="Bold" />
@@ -15,14 +15,14 @@
         </CollectionView.GroupHeaderTemplate>
         <CollectionView.GroupFooterTemplate>
             <DataTemplate>
-                <BoxView HeightRequest="15"
-                   BackgroundColor="LightBlue"/>
+                <BoxView HeightRequest="15" 
+                   BackgroundColor="LightBlue" />
             </DataTemplate>
         </CollectionView.GroupFooterTemplate>
 
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid Padding="10">
+                <Grid Padding="10" Margin="10">
                     <Image Grid.RowSpan="2"
                        Source="{Binding ImageUrl}"
                        Aspect="AspectFill"

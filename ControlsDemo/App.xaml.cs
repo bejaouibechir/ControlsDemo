@@ -1,9 +1,11 @@
-﻿//#define itemsviews
+﻿#define itemsviews
 //#define commandviews
 //#define inputcontrols
 //#define prensentationcontrols
 //#define textcontrols
-#define collectionviews 
+//#define collectionviews 
+//#define refreshview
+
 
 namespace ControlsDemo;
 
@@ -33,6 +35,9 @@ public partial class App : Application
         MainPage = new CollectionViewPageDemo();
 #endif
 
+#if refreshview
+       MainPage = new RefreshViewPageDemo();
+#endif
 
 
     }

@@ -92,23 +92,23 @@
     
     
     <!--Uncomment to test the collection view-->
-    <CollectionView x:Name="mycollection" SelectionMode="Multiple"  >
+    <!--<CollectionView x:Name="mycollection" SelectionMode="Multiple"  >
         <CollectionView.Header>
             <Label FontSize="Large" Margin="10" Text="Languages:"/>
         </CollectionView.Header>
-        <!--Use the HeaderTemplate to define dynamically the header-->
+        --><!--Use the HeaderTemplate to define dynamically the header-->
         <!--<CollectionView.HeaderTemplate>
             <DataTemplate>
                 
             </DataTemplate>
-        </CollectionView.HeaderTemplate>-->
+        </CollectionView.HeaderTemplate>--><!--
         <CollectionView.Footer>
             <Label FontSize="Large" Margin="10" Text="Languages"/>
         </CollectionView.Footer>
-        <!--Use the FooterTemplate to define dynamically the footer--><!--
+        --><!--Use the FooterTemplate to define dynamically the footer--><!--
         <CollectionView.FooterTemplate>
             
-        </CollectionView.FooterTemplate>-->
+        </CollectionView.FooterTemplate>--><!--
         
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type x:String}">
@@ -141,11 +141,11 @@
                 </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
-    </CollectionView>
+    </CollectionView>-->
     
             
     <!--Uncomment to test the  Picker-->
-    <!--<StackLayout>
+    <StackLayout>
         <Picker Title="Select a Language" 
                 FontSize="20"
                 VerticalOptions="Center"
@@ -164,7 +164,7 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-    </StackLayout>-->
+    </StackLayout>
      <!--Uncomment to test the table view-->
     <!--<TableView Intent="Settings">
         <TableRoot>
@@ -176,6 +176,12 @@
                     Detail="ImageCell Detail"
                     ImageSource="dotnet_bot.svg"
                     Text="ImageCell Text" />
+                <TextCell Text="Ce ci est un texte" Detail="Ce ci ce sont des détails"/>
+                <ViewCell>
+                    <Grid ColumnDefinitions="*,*,*">
+                        <Border Background="red" Grid.Column="1"/>
+                    </Grid>
+                </ViewCell>
             </TableSection>
             <TableSection Title="Second Section">
                 <TextCell Detail="TextCell Detail" Text="TextCell" />
