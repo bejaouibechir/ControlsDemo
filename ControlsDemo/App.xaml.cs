@@ -1,10 +1,10 @@
-﻿#define itemsviews
+﻿//#define itemsviews
 //#define commandviews
 //#define inputcontrols
 //#define prensentationcontrols
 //#define textcontrols
 //#define collectionviews 
-//#define refreshview
+#define refreshview
 
 
 namespace ControlsDemo;
