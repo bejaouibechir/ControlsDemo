@@ -12,7 +12,9 @@
                IsPassword="False"
                Keyboard="Text"
                TextChanged="Entry_TextChanged"
-               Completed="Entry_Completed">
+               Completed="Entry_Completed"
+               Unfocused="Entry_Unfocused"
+               >
         </Entry>
 
         <Label Text="Age:"/>
@@ -32,7 +34,7 @@
                IsPassword="False"
                Keyboard="Email"
                TextChanged="Entry_TextChanged"
-               Completed="Entry_Completed">
+               Unfocused="Entry_Unfocused">
         </Entry>
 
         <Label Text="Telephone:"/>

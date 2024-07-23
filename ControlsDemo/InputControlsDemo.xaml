@@ -14,7 +14,7 @@
                 MaximumTrackColor="Green"
                 ThumbColor="DarkRed"
                     ValueChanged="slider_ValueChanged"/>
-        <Label x:Name="lblSlider" />
+        <Label x:Name="lblSlider" FontSize="25"  HorizontalOptions="CenterAndExpand"/>
 
         <Stepper x:Name="stepper" 
                      ValueChanged="stepper_ValueChanged"

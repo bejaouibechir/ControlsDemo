@@ -17,6 +17,7 @@
         <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
                      Content="Option 2"
                      GroupName="group1"/>
+        
         <RadioButton CheckedChanged="RadioButton_CheckedChanged" 
                      Content="Option 3"
                      GroupName="group2"/>
@@ -27,6 +28,7 @@
         <SearchBar x:Name="searchControl" 
                    SearchButtonPressed="searchControl_SearchButtonPressed"/>
 
+        <!--Pour limiter la direction du SwipeView utilisez FlowDirection (RightToLeft,LeftToRight,MatchParent)-->
         <SwipeView>
             <SwipeView.LeftItems>
                 <SwipeItems>
