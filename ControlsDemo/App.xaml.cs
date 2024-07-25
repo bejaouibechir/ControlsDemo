@@ -1,5 +1,5 @@
-﻿//#define itemsviews
-#define commandviews
+﻿#define itemsviews
+//#define commandviews
 //#define inputcontrols
 //#define prensentationcontrols
 //#define textcontrols

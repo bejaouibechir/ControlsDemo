@@ -4,21 +4,30 @@
              xmlns:local="clr-namespace:ControlsDemo"
              x:Class="ControlsDemo.CollectionsControlsDemo"
              Title="CollectionsControlsDemo">
-    <!--<StackLayout>-->
 
-    <!--<CarouselView IndicatorView="indicatorView">
+    <ContentPage.Resources>
+  
+
+          
+    </ContentPage.Resources>
+    
+    
+    
+    <!--To test CarouselView Uncomment this-->
+    <!--<StackLayout>
+        <CarouselView IndicatorView="indicatorView">
             <CarouselView.ItemsSource>
-                 <x:Array Type="{x:Type x:String}">
-                <x:String>C#</x:String>
-                <x:String>Java</x:String>
-                <x:String>C++</x:String>
-                <x:String>Objective C</x:String>
-                <x:String>C</x:String>
-                <x:String>Javascript</x:String>
-                <x:String>Typescript</x:String>
-                <x:String>Ruby</x:String>
-                <x:String>Groovy</x:String>
-            </x:Array>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>C#</x:String>
+                    <x:String>Java</x:String>
+                    <x:String>C++</x:String>
+                    <x:String>Objective C</x:String>
+                    <x:String>C</x:String>
+                    <x:String>Javascript</x:String>
+                    <x:String>Typescript</x:String>
+                    <x:String>Ruby</x:String>
+                    <x:String>Groovy</x:String>
+                </x:Array>
             </CarouselView.ItemsSource>
             <CarouselView.ItemTemplate>
                 <DataTemplate>
@@ -38,19 +47,19 @@
             </CarouselView.ItemTemplate>
         </CarouselView>
 
-        <IndicatorView
-        x:Name="indicatorView"
-        HorizontalOptions="Center"
-        IndicatorColor="LightGray"
-        SelectedIndicatorColor="DarkGray"/>-->
+        <IndicatorView x:Name="indicatorView" HorizontalOptions="Center"
+                   IndicatorColor="LightGray"
+                         SelectedIndicatorColor="DarkGray"/>
 
-    <!--</StackLayout>-->
+    </StackLayout>-->
 
     <!--To test ListView Uncomment this-->
   
-    <!--<ListView HasUnevenRows="True" >
-        --><!--To feed the listview with fake data--><!--
-        <ListView.ItemsSource>
+    <!--<ListView HasUnevenRows="True" ItemSelected="ListView_ItemSelected" >-->
+        <!--To feed the listview with fake data-->
+    
+    <!--Alternative 1-->
+        <!--<ListView.ItemsSource>
              <x:Array Type="{x:Type x:String}">
                 <x:String>C#</x:String>
                 <x:String>Java</x:String>
@@ -62,9 +71,10 @@
                 <x:String>Ruby</x:String>
                 <x:String>Groovy</x:String>
             </x:Array>
-        </ListView.ItemsSource>
+     </ListView.ItemsSource>-->
 
-        --><!--Uncomment To use the ListView (The TextCell case)-->
+        <!--Uncomment To use the ListView (The TextCell case)-->
+        <!--Alternative 2-->
         <!--<ListView.ItemsSource>
             <x:Array Type="{x:Type local:Langage}">
                 <local:Langage Name="C#" Detail="Compiled Langage"/>
@@ -72,41 +82,51 @@
                 <local:Langage Name="C" Detail="Procedural Langage"/>
                 <local:Langage Name="F#" Detail="Functional Langage"/>
             </x:Array>
-        </ListView.ItemsSource>
-        
-        <ListView.ItemTemplate>
+        </ListView.ItemsSource>-->
+
+        <!--Alternative 2-->
+        <!--<ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Name }" 
                           Detail="{Binding Detail}"/>
             </DataTemplate>
-        </ListView.ItemTemplate>--><!--
+        </ListView.ItemTemplate>-->
 
+        <!--Alternative 1--><!--
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding .}" 
                           Detail="Programming langage"/>
             </DataTemplate>
-        </ListView.ItemTemplate>
+        </ListView.ItemTemplate>-->
 
-    </ListView>-->
+    <!--</ListView>-->
     
     
     <!--Uncomment to test the collection view-->
     <!--<CollectionView x:Name="mycollection" SelectionMode="Multiple"  >
-        <CollectionView.Header>
-            <Label FontSize="Large" Margin="10" Text="Languages:"/>
-        </CollectionView.Header>
-        --><!--Use the HeaderTemplate to define dynamically the header-->
-        <!--<CollectionView.HeaderTemplate>
+
+        --><!--Pour présenter plus qu'un élément dans une ligne--><!-- 
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Span="2" Orientation="Vertical"/>
+        </CollectionView.ItemsLayout>
+        
+        --><!--<CollectionView.Header>
+            <StackLayout BackgroundColor="LightGray" Padding="10">
+                <Label FontSize="Large" Margin="10" Text="Languages:"/>
+            </StackLayout>
+        </CollectionView.Header>-->
+        <!--Use the HeaderTemplate to define dynamically the header--><!--
+        <CollectionView.HeaderTemplate>
             <DataTemplate>
-                
+                <Label FontSize="Large" Margin="10" Text="Languages:"/>
             </DataTemplate>
-        </CollectionView.HeaderTemplate>--><!--
+        </CollectionView.HeaderTemplate>
         <CollectionView.Footer>
             <Label FontSize="Large" Margin="10" Text="Languages"/>
         </CollectionView.Footer>
-        --><!--Use the FooterTemplate to define dynamically the footer--><!--
-        <CollectionView.FooterTemplate>
+        --><!--Use the FooterTemplate to define dynamically the footer-->
+        <!--<CollectionView.FooterTemplate>
             
         </CollectionView.FooterTemplate>--><!--
         
@@ -143,10 +163,49 @@
         </CollectionView.ItemTemplate>
     </CollectionView>-->
     
-            
+    <!--Application de Data template sur un objet complexe-->
+
+    <CollectionView Margin="20" ItemTemplate="{StaticResource selector}">
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type local:Place}">
+                <local:Place Continent="Europe" Name="Paris" Longitude="48.8566" Latitude="2.3522" Population="2161000"/>
+                <local:Place Continent="Asie" Name="Tokyo" Longitude="35.6762" Latitude="139.6503" Population="13960000"/>
+                <local:Place Continent="Europe" Name="Berlin" Longitude="52.5200" Latitude="13.4050" Population="3645000"/>
+                <local:Place Continent="Europe" Name="London" Longitude="51.5072" Latitude="0.1276" Population="8982000"/>
+                <local:Place Continent="Afrique" Name="Alger" Longitude="36.7538" Latitude="3.0588" Population="3154792"/>
+                <local:Place Continent="Europe" Name="Barcelone" Longitude="41.3874" Latitude="2.1686" Population="1620000"/>
+                <local:Place Continent="Europe" Name="Lisbone" Longitude="38.7223" Latitude="9.1393" Population="504718"/>
+                <local:Place Continent="Europe" Name="Roma" Longitude="41.9028" Latitude="12.4964" Population="2873000"/>
+            </x:Array>
+
+        </CollectionView.ItemsSource>
+        <!--<CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border Margin="2"  MinimumHeightRequest="50" MinimumWidthRequest="50" StrokeShape="Rectangle 5,5,5,5" Background="red">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Label Padding="2" Grid.ColumnSpan="2" Text="{Binding Name}" FontSize="25" FontAttributes="Bold"/>
+                        <Label Padding="2" Margin="0,2,0,0" Grid.Row="1" Text="{Binding Longitude, StringFormat='Longitude: {0:F2}'}"/>
+                        <Label Padding="2" Grid.Row="2" Text="{Binding Longitude, StringFormat='Latitude: {0:F2}'}"/>
+                        <Label Padding="2" Grid.Row="3" Text="{Binding Population, StringFormat='Population: {0:F0}'}"/>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>-->
+    </CollectionView>
+
+
+
+
+
     <!--Uncomment to test the  Picker-->
-    <StackLayout>
-        <Picker Title="Select a Language" 
+    <!--<StackLayout>
+        <Picker Title="Select a Language"
                 FontSize="20"
                 VerticalOptions="Center"
                 SelectedIndexChanged="Picker_SelectedIndexChanged">
@@ -164,7 +223,7 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-    </StackLayout>
+    </StackLayout>-->
      <!--Uncomment to test the table view-->
     <!--<TableView Intent="Settings">
         <TableRoot>

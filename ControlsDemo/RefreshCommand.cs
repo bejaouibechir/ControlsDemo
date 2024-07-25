@@ -12,7 +12,7 @@ namespace ControlsDemo
         public void Execute(object parameter)
         {
             //To do: implement the data feeding logic
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
